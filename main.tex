@@ -1,0 +1,285 @@
+\documentclass[a4paper, 10pt]{article}
+
+% MARGIN AND PAGE LAYOUT
+\usepackage[margin=1cm, top=1.0cm, bottom=2cm]{geometry}
+\usepackage{parskip}
+
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*}
+\usepackage{tabularx}
+
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Saurabh Vishwakarma's CV},
+    pdfauthor={Saurabh Vishwakarma},
+    pdfcreator={Saurabh Vishwakarma},
+    colorlinks=true,
+    urlcolor=blue
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{xcolor} % Include this in your preamble
+\usepackage{fontspec}
+
+% \setmainfont{Arial}[]
+
+% \setmainfont{Times New Roman} % Change to any installed system font
+\newcommand{\blue}[1]{\textcolor[HTML]{002855}{#1}}
+
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\setmainfont{Calibri}[
+    Path=Calibri/, % Path to the folder containing Calibri font files
+    Extension=.ttf,
+    UprightFont=calibri,
+    BoldFont=*-bold,
+    % ItalicFont=calibri italic,
+    % BoldItalicFont=calibri bold italic
+]
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.1 cm
+} % section title spacing
+
+
+\usepackage{enumitem}
+
+\newlist{highlights}{itemize}{1}
+% \setlist[highlights]{label=-, left=0pt, itemsep=0pt, topsep=0pt}
+
+% \renewcommand\labelitemi{$\circ$} % custom bullet points
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+       0 cm
+    }{
+        0 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+
+
+
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize }}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+% \textbf{\fontsize{18pt}{22pt}\selectfont \blue{Saurabh Vishwakarma}}
+% \vspace{0.2cm}
+
+
+
+
+\definecolor{blue}{HTML}{002855}
+
+
+\begin{paracol}{2}
+\begin{flushleft}
+\textbf{\fontsize{26pt}{28pt}\selectfont \textcolor{blue}{Saurabh Vishwakarma}}\\[2pt]
+\fontsize{16pt}{16pt}\selectfont Software Engineer
+\end{flushleft}
+
+\switchcolumn
+\begin{flushright}
+Gurugram Haryana \quad \href{tel:+91-7000729488}{+91 7000729488}\\
+\href{mailto:contact@saurabhvishwakarma.in}{contact@saurabhvishwakarma.in}\\
+\href{https://www.linkedin.com/in/saurabh254}{linkedin.com/in/saurabh254}\\
+\href{https://github.com/saurabh254}{github.com/saurabh254} \quad
+\href{https://saurabhvishwakarma.in}{saurabhvishwakarma.in}
+\end{flushright}
+\end{paracol}
+
+
+
+
+
+\section{Professional Summary}
+\vspace{0.1cm}
+
+Software Developer with hands on experience building scalable backend systems for 5,000+ users. Expert in Python, FastAPI, and AWS with a strong foundation in data structures and algorithms.
+
+
+\section{Technical Skills}
+\vspace{0.1cm}
+\begin{itemize}
+    \item \textbf{Frameworks:} FastAPI, SQLAlchemy, Django, React
+    \item \textbf{Languages:} Python, GoLang, JavaScript
+    \item \textbf{Database:} PostgreSQL, Supabase, Redis, MongoDB
+    \item \textbf{Cloud \& Deployments:} AWS, Docker, Kubernetes, Linux, Terraform
+\end{itemize}
+
+\section{Work Experience}
+\vspace{0.3em}
+
+
+\begin{onecolentry}
+    \textbf{Software Developer Engineer} \hfill October 2025 -  Present \\
+    \blue{Synthlane} \hfill Gurugram, Haryana
+    \begin{itemize}
+\item Built a \textbf{Customer Gateway layer} with \textbf{RBAC} using FastAPI to manage user operations and abstract internal orchestration workflows.
+\item Engineered deployments on \textbf{AWS ECS} using \textbf{Terraform} and \textbf{GitHub workflows}, making releases smoother and more reliable.
+\item Rebuilt broken internal tools on \textbf{Kubernetes} and added Grafana Alloy to improve reliability and monitoring
+\item Reduced FastAPI \textbf{p95} and\textbf{p99} latency from\textbf{ 450 ms} to under\textbf{ 120 ms} at \textbf{40 RPS} through deployment and application level performance optimizations.
+\end{itemize}
+\end{onecolentry}
+\begin{onecolentry}
+    \textbf{Software Engineer - Freelance} \hfill January 2025 - October 2025 \\
+    \blue{Outlier AI} \hfill Remote
+    \begin{itemize}
+\item Developed a \textbf{Streamlit app} to compare AI model responses, incorporating performance metrics for 20+ models.
+\item Enhanced LLM code generation through prompt design, curated datasets, and systematic evaluation, improving accuracy by 15\%.
+\item Performed systematic A/B testing of prompt variations to improve model accuracy by 15\% across coding tasks.
+\end{itemize}
+\end{onecolentry}
+
+\begin{onecolentry}
+    \textbf{Software Developer Engineer Intern} \hfill January 2024 -- January 2025 \\
+    \blue{Hunkaar Labs} \hfill Bhopal, India
+    \begin{itemize}
+      \item Developed and deployed \textbf{FastAPI + Celery} microservices with an admin dashboard, serving \textbf{5,000+} users.
+          \item Integrated Razorpay payments (\textbf{700+} transactions, \textbf{99\%} success) and added LangChain-based\textbf{ workflow automation}.
+        \item Designed chat using \textbf{WebSockets}, \textbf{posts} and \textbf{stories} with REST APIs, and live streaming via \textbf{LiveKit}, achieving \textbf{99\%} uptime.
+\end{itemize}
+\end{onecolentry}
+
+\section{Projects}
+
+\vspace{0.2cm}
+\noindent
+\begin{tabularx}{\textwidth}{Xr}
+\textbf{PinSphere}: Full-Stack Media Sharing Platform & 
+\href{https://github.com/saurabh254/pinsphere}{GitHub Repository} \\
+\end{tabularx}
+
+\begin{itemize}
+    \item Planned scalable architecture and \textbf{intelligent search} with Llama 3.2 \& Sbert, including \textbf{vector embeddings}.
+    \item Optimized storage with \textbf{40\% compression} and enhanced image/video pipeline via Celery-based BlurHash processing.
+    \item \textbf{Tech Stack:} FastAPI, React, PostgreSQL, MinIO, Celery, Large Language Models (LLMs), SBERT, AWS (S3, EC2)
+\end{itemize}
+
+\noindent
+\begin{tabularx}{\textwidth}{Xr}
+\textbf{RedisGo}: Redis implementation in GoLang  & 
+\href{https://github.com/Saurabh254/redisgo}{GitHub Repository} \\
+\end{tabularx}
+
+\begin{itemize}
+    \item Implements a TCP-based Redis-like server in Go (v2.1) using the \textbf{tidwall/resp }library, goroutines, channels, maps, and sync.RWMutex for concurrent key-value storage.
+
+    \item Parses \textbf{RESP arrays} into typed commands (SET, GET, HELLO, client) and handles network I/O, connection lifecycle, and in-memory KV operations with minimal error handling.
+
+    \item \textbf{Tech Stack:} Go, RESP Protocol, Goroutines, net
+\end{itemize}
+
+
+
+\section{Education}
+
+\vspace{0.1cm}
+\begin{tabularx}{\textwidth}{X r}
+    \textbf{Bachelor of Technology in Computer Science Engineering} & \textit{July 2021–May 2025} \\
+    \textit{NRI Institute of Information Science and Technology - Bhopal} & \\
+\end{tabularx}
+\begin{itemize}
+    \item \textbf{Relevant Coursework:} Data Structures and Algorithms, DBMS, Operating Systems, Computer Networks, OOPs.
+\end{itemize}
+
+
+
+    
+\section{Achievements}
+
+\begin{onecolentry}
+\begin{itemize}
+    \vspace{0.1cm}
+    \item Solved \textbf{300+} Data Structures and Algorithms problems on LeetCode, GeeksforGeeks, and Decoder.
+    \item Contributed to open-source projects with bug fixes and feature enhancements for \textbf{3+} GitHub repositories.
+    \item \textbf{Coding Profiles:} \href{https://codolio.com/profile/saurabh254}{Codolio}, 
+          \href{https://www.geeksforgeeks.org/user/sauravvishwakarma030/}{GeeksforGeeks}, 
+          \href{https://leetcode.com/u/saurabh254/}{LeetCode}, 
+          \href{https://www.codechef.com/users/saurabh254}{CodeChef}, 
+          \href{https://code.dcoder.tech/profile/sauravvishwakarma}{Dcoder}
+\end{itemize}
+\end{onecolentry}
+
+\end{document}
