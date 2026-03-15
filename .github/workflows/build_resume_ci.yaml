@@ -1,0 +1,35 @@
+name: build-resume
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v4
+
+      - name: install latex
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex latexmk
+
+      - name: build resume
+        run: |
+          latexmk -xelatex main.tex
+
+      - name: push pdf to target repo
+        run: |
+          git clone https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/saurabh254/saurabh254.git target
+          cp main.pdf target/public/saurabh_resume.pdf
+          cd target
+          git config user.name "resume-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add resume.pdf
+          git commit -m "update resume"
+          git push
