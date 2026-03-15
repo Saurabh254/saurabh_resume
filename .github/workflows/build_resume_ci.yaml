@@ -3,6 +3,8 @@ name: build-resume
 on:
   push:
     branches: [main]
+    paths:
+      - "main.tex"
 
   workflow_dispatch:
 
@@ -24,10 +26,11 @@ jobs:
       - name: push pdf to target repo
         run: |
           git clone https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/saurabh254/portfolio-html.git target
+          mkdir -p target/public
           cp main.pdf target/public/saurabh_resume.pdf
           cd target
-          git config user.name "resume-bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "saurabh254"
+          git config user.email "sauravvishwakarma030@gmail.com"
           git add public/saurabh_resume.pdf
           git commit -m "update resume"
           git push
