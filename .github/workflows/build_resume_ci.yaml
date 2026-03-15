@@ -17,14 +17,14 @@ jobs:
       - name: install TeX Live full
         run: sudo apt-get update && sudo apt-get install -y texlive-full
 
-      - name: build resume
-        run: |
-          latexmk -xelatex main.tex
       - name: install fonts
         run: |
           sudo apt-get update
           sudo apt-get install -y ttf-mscorefonts-installer fontconfig
           sudo fc-cache -fv
+      - name: build resume
+        run: |
+          latexmk -xelatex main.tex
 
       - name: push pdf to target repo
         run: |
