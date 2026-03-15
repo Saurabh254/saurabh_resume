@@ -23,7 +23,7 @@ jobs:
 
       - name: push pdf to target repo
         run: |
-          git clone https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/saurabh254/saurabh254.git target
+          git clone https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/saurabh254/portfolio-html.git target
           cp main.pdf target/public/saurabh_resume.pdf
           cd target
           git config user.name "resume-bot"
