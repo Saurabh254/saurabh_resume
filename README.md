@@ -1,7 +1,7 @@
 # Install required packages
 
 ```bash
-sudo pacman -S texlive-most latexmk
+sudo pacman -S texlive-basic texlive-latex texlive-latexextra texlive-binextra texlive-fontsrecommended
 ```
 
 ---
