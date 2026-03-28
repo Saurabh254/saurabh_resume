@@ -1,7 +1,7 @@
 \documentclass[a4paper, 10pt]{article}
 
 % MARGIN AND PAGE LAYOUT
-\usepackage[margin=1cm, top=1.0cm, bottom=2cm]{geometry}
+\usepackage[margin=1cm, top=1.0cm, bottom=0cm]{geometry}
 \usepackage{parskip}
 
 \usepackage{enumitem}
@@ -176,8 +176,7 @@ Gurugram Haryana \quad \href{tel:+91-7000729488}{+91 7000729488}\\
 \section{Professional Summary}
 \vspace{0.1cm}
 
-Software Developer with hands on experience building scalable backend systems for 5,000+ users. Expert in Python, FastAPI, and AWS with a strong foundation in data structures and algorithms.
-
+I'm a Software Engineer building scalable systems and improving performance for production applications. Focused on clean architecture, reliability, and maintainable code. Works across backend, data, and infrastructure with strong ownership and execution.
 
 \section{Technical Skills}
 \vspace{0.1cm}
@@ -185,7 +184,7 @@ Software Developer with hands on experience building scalable backend systems fo
     \item \textbf{Frameworks:} FastAPI, SQLAlchemy, Django, React
     \item \textbf{Languages:} Python, GoLang, JavaScript
     \item \textbf{Database:} PostgreSQL, Supabase, Redis, MongoDB
-    \item \textbf{Cloud \& Deployments:} AWS, Docker, Kubernetes, Linux, Terraform
+    \item \textbf{Cloud \& Deployments:} AWS, Docker, Kubernetes, Linux, Terraform, Vercel
 \end{itemize}
 
 \section{Work Experience}
@@ -193,13 +192,21 @@ Software Developer with hands on experience building scalable backend systems fo
 
 
 \begin{onecolentry}
-    \textbf{Software Developer Engineer} \hfill October 2025 -  Present \\
+    \textbf{Software Engineer} \hfill October 2025 -  Present \\
     \blue{Synthlane} \hfill Gurugram, Haryana
     \begin{itemize}
-\item Built a \textbf{Customer Gateway layer} with \textbf{RBAC} using FastAPI to manage user operations and abstract internal orchestration workflows.
-\item Engineered deployments on \textbf{AWS ECS} using \textbf{Terraform} and \textbf{GitHub workflows}, making releases smoother and more reliable.
-\item Rebuilt broken internal tools on \textbf{Kubernetes} and added Grafana Alloy to improve reliability and monitoring
-\item Reduced FastAPI \textbf{p95} and\textbf{p99} latency from\textbf{ 450 ms} to under\textbf{ 120 ms} at \textbf{40 RPS} through deployment and application level performance optimizations.
+% \item Built a \textbf{Customer Gateway layer} with \textbf{RBAC} using FastAPI to manage user operations and abstract internal orchestration workflows.
+% \item Engineered deployments on \textbf{AWS ECS} using \textbf{Terraform} and \textbf{GitHub workflows}, making releases smoother and more reliable.
+% \item Rebuilt broken internal tools on \textbf{Kubernetes} and added Grafana Alloy to improve reliability and monitoring
+% \item Reduced FastAPI \textbf{p95} and\textbf{p99} latency from\textbf{ 450 ms} to under\textbf{ 120 ms} at \textbf{40 RPS} through deployment and application level performance optimizations.
+\item Built a \textbf{FastAPI backend services} with \textbf{RBAC} to manage user operations and decouple internal orchestration workflows.
+\item Designed authentication and authorization using \textbf{Okta} and \textbf{Supabase Auth} with \textbf{RBAC} and \textbf{RLS} for fine grained access control.
+\item Integrated \textbf{Langfuse} for end-to-end tracing and observability across LLM and backend workflows.
+\item Migrated data from \textbf{PostgreSQL} to \textbf{Supabase} using \textbf{Fivetran} and \textbf{dbt}, ensuring reliable data pipelines and transformations.
+\item Automated deployments on \textbf{AWS ECS} using \textbf{Terraform} and \textbf{GitHub Actions}, improving release consistency and reliability.
+\item Rebuilt internal tools on \textbf{Kubernetes} and integrated \textbf{Grafana Alloy} to strengthen system reliability and observability.
+\item Reduced FastAPI \textbf{p95/p99 latency} from \textbf{450 ms} to \textbf{<100 ms} at \textbf{80 RPS} through application and infrastructure level optimizations.
+
 \end{itemize}
 \end{onecolentry}
 \begin{onecolentry}
@@ -213,7 +220,7 @@ Software Developer with hands on experience building scalable backend systems fo
 \end{onecolentry}
 
 \begin{onecolentry}
-    \textbf{Software Developer Engineer Intern} \hfill January 2024 -- January 2025 \\
+    \textbf{Software Engineer Intern} \hfill January 2024 -- January 2025 \\
     \blue{Hunkaar Labs} \hfill Bhopal, India
     \begin{itemize}
       \item Developed and deployed \textbf{FastAPI + Celery} microservices with an admin dashboard, serving \textbf{5,000+} users.
