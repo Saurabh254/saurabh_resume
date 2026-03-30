@@ -29,6 +29,7 @@
 \usepackage{lastpage} % for getting the total number of pages
 \usepackage{changepage} % for one column entries (adjustwidth environment)
 \usepackage{paracol} % for two and three column entries
+\usepackage{etoolbox} % for \patchcmd (footer style)
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
@@ -175,12 +176,12 @@ Noida, Uttar Pradesh \quad \href{tel:+91-8340571873}{+91 8340571873}\\
 \section{Professional Summary}
 \vspace{0.1cm}
 
-Software engineer with hands-on experience shipping \textbf{client and product work} across \textbf{mobile and web}: \textbf{Flutter} and \textbf{FastAPI} apps in production (including \textbf{App Store} and \textbf{Google Play} releases), \textbf{Spring Boot} and \textbf{Angular} services, and \textbf{Adonis.js} / \textbf{Next.js} backends and UIs. Comfortable owning \textbf{end-to-end delivery}---API design, schema and migration changes, integrations (\textbf{Jitterbit}-style connectors, \textbf{AWS} patterns such as \textbf{S3 presigned URLs}), and operational cutovers including \textbf{cloud migrations}. Recently focused on \textbf{AI-assisted workflows}: \textbf{LLM} analysis, prompt and observability tooling (\textbf{Langfuse}), and voice orchestration (\textbf{Vapi}), with solid grounding in concurrency, queues, and reliable backend design. \textbf{MCA}; motivated by end-to-end ownership, clear architecture, and shipping that holds up in production.
+\textbf{MCA} software engineer delivering \textbf{mobile and web} products end-to-end (\textbf{Flutter}, \textbf{FastAPI}, \textbf{NestJS}, \textbf{Spring Boot}, \textbf{Next.js}, \textbf{Angular}). Confident with \textbf{AI-backed systems}: \textbf{LLM} workflows, prompts and tracing (\textbf{Langfuse}), voice (\textbf{Vapi}), plus queues, integrations, and \textbf{AWS}-style production work (\textbf{S3} presigned URLs, migrations). Focused on reliable APIs, clean architecture, and shipping that survives real users.
 
 \section{Technical Skills}
 \vspace{0.1cm}
 \begin{itemize}
-    \item \textbf{Frameworks:} Nest Js, Flutter, Next Js, React Js, Spring Boot, Adonis Js, FastAPI
+    \item \textbf{Frameworks:} NestJS, Flutter, Next.js, React, Spring Boot, Adonis.js, FastAPI
     \item \textbf{Languages:} Java, Dart, JavaScript, TypeScript, Python
     \item \textbf{Database:} PostgreSQL, Supabase, Redis, MongoDB
     \item \textbf{Cloud \& Deployments:} AWS, Docker, Vercel
@@ -191,12 +192,11 @@ Software engineer with hands-on experience shipping \textbf{client and product w
 
 
 \begin{onecolentry}
-    \textbf{Software Engineer} \hfill November 2024 -  Present \\
+    \textbf{Software Engineer} \hfill November 2024 -- Present \\
     \blue{Synthlane} \hfill Noida, Uttar Pradesh
     \begin{itemize}
 \item \textbf{Voicelane} (product): Built an AI-powered \textbf{lead qualification} tool; led \textbf{backend and frontend} for \textbf{job queues}, \textbf{concurrent call} handling, and orchestration. Shipped pre- and post-call \textbf{LLM analysis} with prompt workflows, \textbf{Langfuse} tracing, and voice calls via \textbf{Vapi}.
-\item \textbf{Sell My Rig} (client): \textbf{Flutter} + \textbf{FastAPI} for an \textbf{equipment finance marketplace} (Class 5--8 trucks/trailers, private-party deals): buyer flows for \textbf{multi-lender} applications and offer comparison; seller flows for one-time doc upload, buyer progress, and payout visibility; shared \textbf{deal workspaces} with docs and messaging.
-\item Shipped production releases with \textbf{database schema} changes, deployment, and store listing maintenance---live on \href{https://play.google.com/store/apps/details?id=com.sellmyrig.appnew}{Google Play} and \href{https://apps.apple.com/us/app/sell-my-rig-equipment-finance/id6749225803}{App Store}.
+\item \textbf{Sell My Rig} (client): \textbf{Flutter} + \textbf{FastAPI} for an \textbf{equipment finance marketplace} (Class 5--8 trucks/trailers, private-party deals): buyer flows for \textbf{multi-lender} applications and offer comparison; seller flows for one-time doc upload, buyer progress, and payout visibility; shared \textbf{deal workspaces} with docs and messaging. Shipped \textbf{database schema} changes, deployment, and store releases (\href{https://play.google.com/store/apps/details?id=com.sellmyrig.appnew}{Google Play}, \href{https://apps.apple.com/us/app/sell-my-rig-equipment-finance/id6749225803}{App Store}).
 \item \textbf{Dehaat} (client): \textbf{Spring Boot} services and \textbf{Angular} admin; supported \textbf{GCP-to-AWS} migration by implementing \textbf{S3 presigned URLs} for image access across services and helping move the \textbf{live} product safely.
 \item \textbf{Quomolo} (client): Backend-heavy work on \textbf{Adonis.js} and \textbf{Next.js} for multi-tenant \textbf{hosted server} memory \textbf{read/write} APIs; implemented \textbf{frontend UI} updates to match client \textbf{Figma} specs.
 
@@ -266,5 +266,36 @@ Software engineer with hands-on experience shipping \textbf{client and product w
     2017 & 12th & CBSE & 66\% \\
     \hline
 \end{tabularx}
+
+\section{Certificates}
+\vspace{0.1cm}
+
+\begin{onecolentry}
+\textbf{Data Structures in Java} \textemdash{} \textbf{Coding Ninjas} \hfill \textit{Mar 2023 -- Jul 2023} \\
+{\small\textit{\textcolor[HTML]{555555}{Certificate No.\ 9c23c3355b7f2625}}}
+\end{onecolentry}
+
+\vspace{0.15cm}
+\begin{onecolentry}
+\textbf{Front End \textbar{} Full Stack Web Development} \textemdash{} \textbf{Coding Ninjas} \hfill \textit{May 2023 -- Jul 2023} \\
+{\small\textit{\textcolor[HTML]{555555}{Certificate No.\ 88442b78cf892a50}}}
+\end{onecolentry}
+
+\vspace{0.15cm}
+\begin{onecolentry}
+\textbf{User Experience: The Beginner's Guide} \textemdash{} \textbf{Interaction Design Foundation} \hfill \textit{Oct 2021 -- Dec 2021} \\
+{\small\textit{\textcolor[HTML]{555555}{Certificate ID:\ 118245-2021-678559}}}
+\end{onecolentry}
+
+\section{Achievements}
+\vspace{0.1cm}
+
+\begin{onecolentry}
+\begin{itemize}
+    \item \textbf{Work-O-Joylic:} Recognized for \textbf{best performance in the month of November} (GlobalLogic).
+    \item \textbf{UI/UX training:} Certification path sponsored by \textbf{GlobalLogic} through the \textbf{Interaction Design Foundation}.
+    \item Solved \textbf{500+} coding problems; progress and solutions summarized on \href{https://github.com/rsbleedblue}{GitHub}.
+\end{itemize}
+\end{onecolentry}
 
 \end{document}
