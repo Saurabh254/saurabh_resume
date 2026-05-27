@@ -22,16 +22,17 @@ jobs:
           path: /usr/share/texlive
           key: texlive-xelatex-${{ runner.os }}-v1
 
-      - name: install TeX Live minimal
-        if: steps.cache-texlive.outputs.cache-hit != 'true'
+      - name: install dependencies
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive-xetex \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-latex-extra \
-            latexmk
+          if [ "${{ steps.cache-texlive.outputs.cache-hit }}" != 'true' ]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends \
+              texlive-xetex \
+              texlive-fonts-recommended \
+              texlive-fonts-extra \
+              texlive-latex-extra
+          fi
+          sudo apt-get install -y --no-install-recommends latexmk
 
       - name: build resume
         run: latexmk -xelatex -interaction=nonstopmode main.tex
