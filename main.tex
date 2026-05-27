@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper, 11pt]{article}
 
 % MARGIN AND PAGE LAYOUT
 \usepackage[margin=1cm, top=1.0cm, bottom=0cm]{geometry}
@@ -175,13 +175,14 @@ Noida, Uttar Pradesh \quad \href{tel:+91-7000729488}{+91 7000729488}\\
 
 \section{Professional Summary}
 \vspace{0.1cm}
-
-I'm a Software Engineer building scalable systems and improving performance for production applications. Focused on clean architecture, reliability, and maintainable code. Works across backend, data, and infrastructure with strong ownership and execution.
+Software Engineer with experience building scalable backend systems, optimizing 
+production performance, and owning end-to-end delivery across backend, data, and 
+infrastructure. Focused on reliability, clean architecture, and measurable impact.
 
 \section{Technical Skills}
 \vspace{0.1cm}
 \begin{itemize}
-    \item \textbf{Frameworks:} FastAPI, SQLAlchemy, Django, React
+    \item \textbf{Frameworks:} FastAPI, SQLAlchemy, Django, React, NextJS, Celery
     \item \textbf{Languages:} Python, GoLang, JavaScript
     \item \textbf{Database:} PostgreSQL, Supabase, Redis, MongoDB
     \item \textbf{Cloud \& Deployments:} AWS, Docker, Kubernetes, Linux, Terraform, Vercel
@@ -205,15 +206,7 @@ I'm a Software Engineer building scalable systems and improving performance for 
 
 \end{itemize}
 \end{onecolentry}
-\begin{onecolentry}
-    \textbf{Software Engineer - Freelance} \hfill January 2025 - October 2025 \\
-    \blue{Outlier AI} \hfill Remote
-    \begin{itemize}
-\item Developed a \textbf{Streamlit app} to compare AI model responses, incorporating performance metrics for 20+ models.
-\item Enhanced LLM code generation through prompt design, curated datasets, and systematic evaluation, improving accuracy by 15\%.
-\item Performed systematic A/B testing of prompt variations to improve model accuracy by 15\% across coding tasks.
-\end{itemize}
-\end{onecolentry}
+
 
 \begin{onecolentry}
     \textbf{Software Engineer Intern} \hfill January 2024 -- January 2025 \\
@@ -242,16 +235,13 @@ I'm a Software Engineer building scalable systems and improving performance for 
 
 \noindent
 \begin{tabularx}{\textwidth}{Xr}
-\textbf{RedisGo}: Redis implementation in GoLang  & 
-\href{https://github.com/Saurabh254/redisgo}{GitHub Repository} \\
+\textbf{Trade-Aggregator}: Real-Time Crypto Trade Aggregator 
 \end{tabularx}
 
 \begin{itemize}
-    \item Implements a TCP-based Redis-like server in Go (v2.1) using the \textbf{tidwall/resp }library, goroutines, channels, maps, and sync.RWMutex for concurrent key-value storage.
-
-    \item Parses \textbf{RESP arrays} into typed commands (SET, GET, HELLO, client) and handles network I/O, connection lifecycle, and in-memory KV operations with minimal error handling.
-
-    \item \textbf{Tech Stack:} Go, RESP Protocol, Goroutines, net
+    \item Implements a Real time Crypto Trade Aggregator that collects and processes trade data from \textbf{binance} websocket, aggregates it, Store it in the postgres and serves it via a FastAPI endpoint with minimal latency.
+    \item Utilizes \textbf{Kafka} and \textbf{Faust} for efficient data streaming and processing, ensuring high throughput and low latency in handling real-time trade data.
+    \item \textbf{Tech Stack:} FastAPI, Kafka, Faust, WebSockets, Python
 \end{itemize}
 
 
