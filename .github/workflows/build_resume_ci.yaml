@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths:
       - "main.tex"
-
   workflow_dispatch:
 
 jobs:
@@ -16,21 +15,35 @@ jobs:
       - name: checkout source
         uses: actions/checkout@v4
 
-      - name: install TeX Live full
-        run: sudo apt-get update && sudo apt-get install -y texlive-full
+      - name: cache TeX Live
+        uses: actions/cache@v4
+        id: cache-texlive
+        with:
+          path: /usr/share/texlive
+          key: texlive-xelatex-${{ runner.os }}-v1
+
+      - name: install TeX Live minimal
+        if: steps.cache-texlive.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-latex-extra \
+            latexmk
 
       - name: build resume
-        run: |
-          latexmk -xelatex main.tex
+        run: latexmk -xelatex -interaction=nonstopmode main.tex
 
       - name: push pdf to target repo
         run: |
-          git clone https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/saurabh254/portfolio-html.git target
+          git clone --depth=1 https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/saurabh254/portfolio-html.git target
           mkdir -p target/public
           cp main.pdf target/public/saurabh_resume.pdf
           cd target
           git config user.name "saurabh254"
           git config user.email "sauravvishwakarma030@gmail.com"
           git add public/saurabh_resume.pdf
-          git commit -m "update resume"
+          git diff --cached --quiet || git commit -m "chore: update resume pdf"
           git push
