@@ -27,12 +27,14 @@ jobs:
           if [ "${{ steps.cache-texlive.outputs.cache-hit }}" != 'true' ]; then
             sudo apt-get update -qq
             sudo apt-get install -y --no-install-recommends \
-              texlive-xetex \
               texlive-fonts-recommended \
               texlive-fonts-extra \
               texlive-latex-extra
           fi
-          sudo apt-get install -y --no-install-recommends latexmk
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex \
+            latexmk
 
       - name: build resume
         run: latexmk -xelatex -interaction=nonstopmode main.tex
